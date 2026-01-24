@@ -5,6 +5,8 @@ const navLinks = document.querySelectorAll(".nav-links a");
 const intro = document.getElementById("intro");
 const introVideo = document.getElementById("introVideo");
 const introSkip = document.getElementById("introSkip");
+const introPlay = document.getElementById("introPlay");
+let introFallbackTimer;
 
 const finishIntro = () => {
   if (!intro) {
@@ -21,8 +23,44 @@ const showLogo = () => {
   if (!intro) {
     return;
   }
+  intro.classList.remove("needs-play");
   intro.classList.add("show-logo");
   setTimeout(finishIntro, 1800);
+};
+
+const scheduleIntroFallback = () => {
+  clearTimeout(introFallbackTimer);
+  introFallbackTimer = setTimeout(() => {
+    if (intro && !intro.classList.contains("show-logo")) {
+      showLogo();
+    }
+  }, 15000);
+};
+
+const markNeedsPlay = () => {
+  if (!intro) {
+    return;
+  }
+  intro.classList.add("needs-play");
+};
+
+const attemptIntroPlay = () => {
+  if (!introVideo) {
+    return;
+  }
+  const playPromise = introVideo.play();
+  if (playPromise && typeof playPromise.then === "function") {
+    playPromise
+      .then(() => {
+        if (intro) {
+          intro.classList.remove("needs-play");
+        }
+        scheduleIntroFallback();
+      })
+      .catch(markNeedsPlay);
+  } else {
+    scheduleIntroFallback();
+  }
 };
 
 if (intro) {
@@ -33,19 +71,20 @@ if (intro) {
   if (prefersReducedMotion) {
     showLogo();
   } else if (introVideo) {
-    const playPromise = introVideo.play();
-    if (playPromise) {
-      playPromise.catch(showLogo);
-    }
+    attemptIntroPlay();
     introVideo.addEventListener("ended", showLogo, { once: true });
     introVideo.addEventListener("error", showLogo, { once: true });
-    setTimeout(() => {
-      if (!intro.classList.contains("show-logo")) {
-        showLogo();
-      }
-    }, 15000);
   } else {
     showLogo();
+  }
+
+  if (introPlay) {
+    introPlay.addEventListener("click", () => {
+      if (introVideo) {
+        introVideo.currentTime = 0;
+      }
+      attemptIntroPlay();
+    });
   }
 
   if (introSkip) {

@@ -154,7 +154,7 @@ ul {
   background: #05070c;
   display: grid;
   place-items: center;
-  perspective: 900px;
+  perspective: 1200px;
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
@@ -173,21 +173,22 @@ ul {
   position: absolute;
   text-align: center;
   opacity: 0;
-  transform: translateZ(-260px) scale(0.6);
+  transform: translateZ(-360px) scale(0.5);
+  transform-style: preserve-3d;
   color: #f5f6f8;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
 }
 
 .intro-logo img {
-  width: 110px;
+  width: 130px;
   margin: 0 auto 1rem;
   filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.6));
 }
 
 .intro-logo h1 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-size: clamp(2.8rem, 6vw, 4.6rem);
   margin: 0;
 }
 
@@ -198,12 +199,41 @@ ul {
 }
 
 .intro.show-logo .intro-logo {
-  animation: logoFly 1.6s ease forwards;
+  animation: logoFly 1.8s ease forwards;
 }
 
 .intro.show-logo .intro-video {
   opacity: 0.2;
   transition: opacity 0.8s ease;
+}
+
+.intro.needs-play .intro-play {
+  display: inline-flex;
+}
+
+.intro.needs-play .intro-video {
+  opacity: 0.85;
+}
+
+.intro-play {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  background: rgba(230, 255, 75, 0.85);
+  border: none;
+  color: #0b0d12;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  cursor: pointer;
+  display: none;
+}
+
+.intro-play:hover,
+.intro-play:focus {
+  background: #e6ff4b;
 }
 
 .intro-skip {
@@ -229,20 +259,34 @@ ul {
 @keyframes logoFly {
   0% {
     opacity: 0;
-    transform: translateZ(-260px) scale(0.6);
+    transform: translateZ(-420px) scale(0.45);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 1;
-    transform: translateZ(0) scale(1);
+    transform: translateZ(80px) scale(1.25);
+  }
+}
+
+@keyframes logoFlyDesktop {
+  0% {
+    opacity: 0;
+    transform: translateZ(-520px) scale(0.4);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateZ(200px) scale(1.65);
   }
 }
 
 .hero {
   position: relative;
-  padding: 5.5rem 0 4rem;
+  padding: 4.5rem 0 4rem;
   background: #0b0d12;
   overflow: hidden;
 }
@@ -795,11 +839,16 @@ ul {
     bottom: 1.5rem;
     right: 1.5rem;
   }
+
+  .intro-play {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
 }
 
 @media (max-width: 640px) {
   .hero {
-    padding: 4.5rem 0 3rem;
+    padding: 4rem 0 3rem;
   }
 
   .hero-grid {
@@ -813,5 +862,11 @@ ul {
 
   .btn {
     width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .intro.show-logo .intro-logo {
+    animation-name: logoFlyDesktop;
   }
 }
