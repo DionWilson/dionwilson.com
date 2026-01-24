@@ -1,28 +1,38 @@
-# DionWilson.com Website
+# DBody | DionWilson.com
 
-![DBody Logo](assets/logo.png) <!-- Your uploaded DBody logo; update path if needed -->
+This repository contains the source for the DBody personal training website.
+It is a fast, static site built with HTML, CSS, and JavaScript.
 
-## Overview
-This repository contains the source code for [dionwilson.com](https://dionwilson.com), the official website for DBody—Dion Wilson's fitness and training company. Founded by Dion Wilson, a certified personal trainer, fitness nutrition specialist, and former professional dancer, DBody promotes functional training services to empower bodies, improve movement, and support active lifestyles for all ages and fitness levels. The domain dionwilson.com is used as the company name "DBody" was unavailable.
+## Project structure
 
-Key features from the site:
-- **About Dion**: Background in dance (e.g., Broadway's *The Lion King*, Alvin Ailey American Dance Theatre) and certifications from the American Council of Exercise.
-- **Services**: One-on-one training, duo sessions, group classes, corporate events, and specialized programs for weight loss, chronic conditions, pre/post-natal fitness, and more.
-- **Social**: Follow on Instagram [@bodybydion](https://www.instagram.com/bodybydion/) for tips, updates, and inspiration.
+```
+/
+  index.html
+  styles.css
+  script.js
+  assets/
+    images/
+    videos/
+    docs/
+```
 
-**Programs Offered by DBody:**
-- **Strength and Conditioning for Dancers**: A comprehensive program tailored for pre-professional and professional dancers, leveraging 15+ years of professional dancing experience and 10+ years as a personal trainer. It focuses on building ultimate strength, core stability, flexibility, posture correction, and injury prevention through functional movements specific to dance. Elements include ballet-inspired techniques to sculpt and strengthen the body, as seen in offerings like Ballet Fitness courses.
-- **DBarre Class for Non-Dancers**: A unique bar class designed for non-dancers to train like professional dancers. It incorporates the same functional movements, body mechanics, core strengthening, back pain relief, and posture improvements required in dance training, making it accessible for everyday fitness enthusiasts.
+## Adding new files
 
-The website is built with [HTML/CSS/JS or your tech stack—e.g., Bootstrap for responsiveness]. It's designed to be simple, informative, and mobile-friendly.
+- **Images**: add JPG/PNG/SVG files to `assets/images/`.
+- **Videos**: add MP4/WebM files to `assets/videos/`.
+- **Documents**: add PDF or certifications to `assets/docs/`.
 
-## Getting Started
-Follow these steps to set up the project locally and contribute.
+Update `index.html` to reference new assets.
 
-### Prerequisites
-- Git installed (download from [git-scm.com](https://git-scm.com))
-- A code editor like VS Code
-- If using a build tool (e.g., Node.js for JS dependencies): Node.js v14+ (download from [nodejs.org](https://nodejs.org))
+## Large video uploads (Git LFS)
 
-### Installation
-1. Clone the repository:
+GitHub blocks files larger than 100 MB in normal Git history. This repo is
+configured to use Git LFS for common video formats. To add a large video:
+
+1. Install Git LFS once on your machine.
+2. Run `git lfs install`.
+3. Add your video to `assets/videos/`.
+4. Commit and push as normal.
+
+If you prefer not to use Git LFS, host the video on YouTube/Vimeo and embed
+the link in `index.html`.
