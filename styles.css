@@ -155,10 +155,10 @@ ul {
   grid-template-columns: 1.1fr 0.9fr;
   gap: 3rem;
   align-items: center;
-  margin-top: 2.5rem;
+  padding-top: 3rem;
 }
 
-.hero-title h1 {
+.hero-content h1 {
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(2.8rem, 4vw, 4.6rem);
   margin: 0 0 1rem;
@@ -221,36 +221,22 @@ ul {
 .hero-banner {
   position: relative;
   width: 100%;
-  height: 50vh;
-  min-height: 320px;
-  max-height: 560px;
+  height: clamp(240px, 42vw, 520px);
   overflow: hidden;
-  background: #0b0d12;
+}
+
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(9, 11, 16, 0.7), rgba(9, 11, 16, 0.2));
 }
 
 .hero-banner img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: flex-end;
-  background: linear-gradient(
-    180deg,
-    rgba(9, 11, 16, 0.05) 0%,
-    rgba(9, 11, 16, 0.55) 65%,
-    rgba(9, 11, 16, 0.85) 100%
-  );
-}
-
-.hero-title {
-  padding-bottom: 2.5rem;
-  max-width: 760px;
+  object-fit: cover;
+  object-position: center 30%;
 }
 
 .section {
@@ -721,16 +707,7 @@ ul {
   }
 
   .hero-grid {
-    margin-top: 2rem;
-  }
-
-  .hero-banner {
-    height: 40vh;
-    min-height: 240px;
-  }
-
-  .hero-title {
-    padding-bottom: 1.6rem;
+    padding-top: 2rem;
   }
 
   .hero-actions {
