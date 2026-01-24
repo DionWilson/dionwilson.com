@@ -7,6 +7,7 @@ const introVideo = document.getElementById("introVideo");
 const introSkip = document.getElementById("introSkip");
 const introPlay = document.getElementById("introPlay");
 let introFallbackTimer;
+let introLogoFallbackTimer;
 
 const finishIntro = () => {
   if (!intro) {
@@ -37,17 +38,28 @@ const scheduleIntroFallback = () => {
   }, 15000);
 };
 
+const scheduleLogoFallback = (delay = 2000) => {
+  clearTimeout(introLogoFallbackTimer);
+  introLogoFallbackTimer = setTimeout(() => {
+    if (intro && !intro.classList.contains("show-logo")) {
+      showLogo();
+    }
+  }, delay);
+};
+
 const markNeedsPlay = () => {
   if (!intro) {
     return;
   }
   intro.classList.add("needs-play");
+  scheduleLogoFallback();
 };
 
 const attemptIntroPlay = () => {
   if (!introVideo) {
     return;
   }
+  clearTimeout(introLogoFallbackTimer);
   const playPromise = introVideo.play();
   if (playPromise && typeof playPromise.then === "function") {
     playPromise
@@ -59,7 +71,7 @@ const attemptIntroPlay = () => {
       })
       .catch(markNeedsPlay);
   } else {
-    scheduleIntroFallback();
+    markNeedsPlay();
   }
 };
 

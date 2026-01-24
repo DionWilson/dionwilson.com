@@ -273,14 +273,14 @@ ul {
 @keyframes logoFlyDesktop {
   0% {
     opacity: 0;
-    transform: translateZ(-520px) scale(0.4);
+    transform: translateZ(-600px) scale(0.35);
   }
   60% {
     opacity: 1;
   }
   100% {
     opacity: 1;
-    transform: translateZ(200px) scale(1.65);
+    transform: translateZ(320px) scale(2.1);
   }
 }
 
@@ -868,5 +868,13 @@ ul {
 @media (min-width: 1024px) {
   .intro.show-logo .intro-logo {
     animation-name: logoFlyDesktop;
+  }
+
+  .intro-logo img {
+    width: 160px;
+  }
+
+  .intro-logo h1 {
+    font-size: clamp(3.4rem, 6vw, 5.2rem);
   }
 }
