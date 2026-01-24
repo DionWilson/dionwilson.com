@@ -2,6 +2,62 @@ const body = document.body;
 const navToggle = document.querySelector(".nav-toggle");
 const navLinks = document.querySelectorAll(".nav-links a");
 
+const intro = document.getElementById("intro");
+const introVideo = document.getElementById("introVideo");
+const introSkip = document.getElementById("introSkip");
+
+const finishIntro = () => {
+  if (!intro) {
+    return;
+  }
+  intro.classList.add("is-exiting");
+  body.classList.remove("is-intro");
+  setTimeout(() => {
+    intro.remove();
+  }, 900);
+};
+
+const showLogo = () => {
+  if (!intro) {
+    return;
+  }
+  intro.classList.add("show-logo");
+  setTimeout(finishIntro, 1800);
+};
+
+if (intro) {
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  if (prefersReducedMotion) {
+    showLogo();
+  } else if (introVideo) {
+    const playPromise = introVideo.play();
+    if (playPromise) {
+      playPromise.catch(showLogo);
+    }
+    introVideo.addEventListener("ended", showLogo, { once: true });
+    introVideo.addEventListener("error", showLogo, { once: true });
+    setTimeout(() => {
+      if (!intro.classList.contains("show-logo")) {
+        showLogo();
+      }
+    }, 15000);
+  } else {
+    showLogo();
+  }
+
+  if (introSkip) {
+    introSkip.addEventListener("click", () => {
+      if (introVideo) {
+        introVideo.pause();
+      }
+      finishIntro();
+    });
+  }
+}
+
 if (navToggle) {
   navToggle.addEventListener("click", () => {
     const isOpen = body.classList.toggle("nav-open");

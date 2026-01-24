@@ -15,7 +15,27 @@
       href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap"
     />
   </head>
-  <body>
+  <body class="is-intro">
+    <div class="intro" id="intro">
+      <video
+        class="intro-video"
+        id="introVideo"
+        autoplay
+        muted
+        playsinline
+        preload="auto"
+      >
+        <source src="assets/videos/opening.mov" type="video/quicktime" />
+      </video>
+      <div class="intro-logo" aria-hidden="true">
+        <img src="assets/images/DBody-logo.png" alt="" />
+        <h1>DBody</h1>
+        <p>Personal Training by Dion Wilson</p>
+      </div>
+      <button class="intro-skip" id="introSkip" type="button">
+        Skip Intro
+      </button>
+    </div>
     <header class="site-header">
       <div class="container header-content">
         <a class="logo" href="#home">
@@ -46,12 +66,6 @@
 
     <main>
       <section class="hero" id="home">
-        <div class="hero-banner">
-          <img
-            src="assets/images/dion-bench.jpeg"
-            alt="Dion Wilson training on bench"
-          />
-        </div>
         <div class="container hero-grid">
           <div class="hero-content">
             <p class="eyebrow">Personal Training | Performance | Dancers</p>
