@@ -398,6 +398,43 @@ ul {
   letter-spacing: 0.04rem;
 }
 
+/* ---------- DANCE CAREER ---------- */
+.dance-career {
+  background: linear-gradient(135deg, rgba(123, 92, 255, 0.1), rgba(9, 11, 16, 0.95) 60%);
+  border-top: 1px solid rgba(123, 92, 255, 0.15);
+}
+
+.card-career {
+  border-color: rgba(123, 92, 255, 0.2) !important;
+  background: rgba(16, 20, 30, 0.85) !important;
+}
+
+.card-career:hover {
+  border-color: rgba(123, 92, 255, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(123, 92, 255, 0.1);
+}
+
+.card-career h3 {
+  color: #b8a4ff;
+}
+
+.career-quote {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+  color: #b8a4ff;
+  border-left: 4px solid #7b5cff;
+  padding: 1rem 0 1rem 1.5rem;
+  margin: 0 auto 2rem;
+  max-width: 640px;
+  text-align: left;
+  font-style: normal;
+  letter-spacing: 0.04rem;
+}
+
+.career-cards {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
 /* ---------- DANCER SPOTLIGHT ---------- */
 .spotlight {
   background: linear-gradient(120deg, rgba(123, 92, 255, 0.18), rgba(9, 11, 16, 0.9));
@@ -483,13 +520,31 @@ ul {
   margin: 0.5rem 0 1rem;
 }
 
-/* ---------- MEETUP ---------- */
+/* ---------- MEETUP / COMMUNITY ---------- */
 .meetup {
   background: linear-gradient(135deg, rgba(247, 147, 26, 0.06), rgba(9, 11, 16, 0.95) 70%);
 }
 
 .meetup-cards .card-bitcoin h3 {
   color: #f7931a;
+}
+
+.inline-link {
+  color: #f7931a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.inline-link:hover {
+  color: #ffc266;
+}
+
+.community-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
 /* ---------- MEDIA ---------- */
