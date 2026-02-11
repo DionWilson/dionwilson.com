@@ -1,3 +1,9 @@
+/* ========================================
+   Dion Wilson | dionwilson.com
+   Entrepreneur | Performance Coach | Bitcoin Advocate
+   ======================================== */
+
+/* ---------- RESET ---------- */
 *,
 *::before,
 *::after {
@@ -9,6 +15,8 @@ body {
   font-family: "Inter", sans-serif;
   color: #f5f6f8;
   background: radial-gradient(circle at top, #141826 0%, #0b0d12 45%, #090b10 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html {
@@ -29,11 +37,13 @@ ul {
   padding-left: 1.2rem;
 }
 
+/* ---------- UTILITY ---------- */
 .container {
   width: min(1200px, 90vw);
   margin: 0 auto;
 }
 
+/* ---------- HEADER ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -77,7 +87,7 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.04rem;
   z-index: 30;
@@ -85,12 +95,13 @@ ul {
 
 .nav-links a {
   opacity: 0.8;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a:focus {
   opacity: 1;
+  color: #f7931a;
 }
 
 .nav-toggle {
@@ -100,14 +111,17 @@ ul {
   background: none;
   border: none;
   padding: 0;
+  cursor: pointer;
 }
 
 .nav-toggle span {
   width: 28px;
   height: 2px;
   background: #f5f6f8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+/* ---------- BUTTONS ---------- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -119,6 +133,7 @@ ul {
   letter-spacing: 0.06rem;
   font-size: 0.85rem;
   border: 1px solid transparent;
+  cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
@@ -133,9 +148,28 @@ ul {
   color: #0b0d12;
 }
 
+.btn-primary:hover {
+  background: #d4f02a;
+}
+
 .btn-secondary {
   background: #7b5cff;
   color: #f5f6f8;
+}
+
+.btn-secondary:hover {
+  background: #6a48e6;
+}
+
+.btn-bitcoin {
+  background: #f7931a;
+  color: #0b0d12;
+  font-weight: 700;
+}
+
+.btn-bitcoin:hover {
+  background: #e5850f;
+  box-shadow: 0 10px 30px rgba(247, 147, 26, 0.3);
 }
 
 .btn-ghost {
@@ -143,6 +177,12 @@ ul {
   color: #f5f6f8;
 }
 
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ---------- HERO ---------- */
 .hero {
   position: relative;
   padding: 6rem 0 4rem;
@@ -155,7 +195,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg, rgba(9, 11, 16, 0.94), rgba(9, 11, 16, 0.7));
+  background: linear-gradient(120deg, rgba(9, 11, 16, 0.95), rgba(9, 11, 16, 0.75));
 }
 
 .hero-grid {
@@ -168,22 +208,33 @@ ul {
 
 .hero-content h1 {
   font-family: "Bebas Neue", sans-serif;
-  font-size: clamp(2.8rem, 4vw, 4.6rem);
+  font-size: clamp(2.4rem, 4vw, 4.2rem);
   margin: 0 0 1rem;
   letter-spacing: 0.06rem;
+  line-height: 1.1;
 }
 
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2rem;
   font-size: 0.8rem;
-  color: #e6ff4b;
+  color: #f7931a;
+  margin-bottom: 0.5rem;
+}
+
+.eyebrow-section {
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 0.8rem;
+  color: #f7931a;
+  margin-bottom: 0.5rem;
 }
 
 .lead {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
-  max-width: 520px;
+  max-width: 540px;
+  opacity: 0.9;
 }
 
 .hero-actions {
@@ -197,17 +248,18 @@ ul {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 1.5rem;
+  margin-top: 1rem;
 }
 
 .stat-row h3 {
   margin: 0 0 0.4rem;
-  font-size: 1.6rem;
-  color: #e6ff4b;
+  font-size: 1.4rem;
+  color: #f7931a;
 }
 
 .stat-row p {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   opacity: 0.8;
 }
 
@@ -216,16 +268,23 @@ ul {
   padding: 2rem;
   border-radius: 24px;
   box-shadow: 0 24px 40px rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(247, 147, 26, 0.2);
 }
 
 .hero-card .tag {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-size: 0.75rem;
-  color: #7b5cff;
+  color: #f7931a;
 }
 
+.hero-card h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.8rem, 2.5vw, 2.4rem);
+  line-height: 1.15;
+}
+
+/* ---------- SECTIONS ---------- */
 .section {
   padding: 5rem 0;
 }
@@ -241,6 +300,19 @@ ul {
   margin-bottom: 0.5rem;
 }
 
+.section-heading p {
+  max-width: 620px;
+  margin: 0 auto;
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+/* ---------- ABOUT ---------- */
 .split {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -267,14 +339,20 @@ ul {
   bottom: 1rem;
   left: 1rem;
   padding: 0.6rem 1rem;
-  background: rgba(9, 11, 16, 0.8);
+  background: rgba(9, 11, 16, 0.85);
   border-radius: 999px;
   font-size: 0.8rem;
+  border: 1px solid rgba(247, 147, 26, 0.3);
 }
 
 .content h2 {
   font-family: "Bebas Neue", sans-serif;
   font-size: clamp(2.1rem, 3vw, 3rem);
+}
+
+.content p {
+  line-height: 1.7;
+  opacity: 0.9;
 }
 
 .cta-row {
@@ -284,6 +362,43 @@ ul {
   flex-wrap: wrap;
 }
 
+/* ---------- BITCOIN FOR THE ARTS ---------- */
+.bitcoin-arts {
+  background: linear-gradient(135deg, rgba(247, 147, 26, 0.08), rgba(9, 11, 16, 0.95) 60%);
+  border-top: 1px solid rgba(247, 147, 26, 0.15);
+  border-bottom: 1px solid rgba(247, 147, 26, 0.15);
+}
+
+.card-bitcoin {
+  border-color: rgba(247, 147, 26, 0.2) !important;
+  background: rgba(16, 20, 30, 0.85) !important;
+}
+
+.card-bitcoin:hover {
+  border-color: rgba(247, 147, 26, 0.5) !important;
+  box-shadow: 0 12px 30px rgba(247, 147, 26, 0.1);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+  line-height: 1;
+}
+
+.bitcoin-quote {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  color: #f7931a;
+  border-left: 4px solid #f7931a;
+  padding: 1rem 0 1rem 1.5rem;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+  text-align: left;
+  font-style: normal;
+  letter-spacing: 0.04rem;
+}
+
+/* ---------- DANCER SPOTLIGHT ---------- */
 .spotlight {
   background: linear-gradient(120deg, rgba(123, 92, 255, 0.18), rgba(9, 11, 16, 0.9));
 }
@@ -294,13 +409,19 @@ ul {
   text-align: center;
 }
 
+.spotlight-header h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(2.2rem, 3vw, 3.4rem);
+}
+
+/* ---------- GRID / CARDS ---------- */
 .grid {
   display: grid;
   gap: 1.5rem;
 }
 
 .cards {
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .card {
@@ -309,6 +430,12 @@ ul {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   min-height: 190px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 .card h3 {
@@ -324,6 +451,7 @@ ul {
   line-height: 1.6;
 }
 
+/* ---------- PACKAGES ---------- */
 .packages {
   background: rgba(12, 14, 20, 0.9);
 }
@@ -337,19 +465,34 @@ ul {
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(16, 20, 30, 0.75);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.price-card:hover {
+  transform: translateY(-4px);
 }
 
 .price-card.featured {
-  border-color: #e6ff4b;
-  box-shadow: 0 20px 40px rgba(230, 255, 75, 0.18);
+  border-color: #f7931a;
+  box-shadow: 0 20px 40px rgba(247, 147, 26, 0.15);
 }
 
 .price-card .price {
   font-size: 1.4rem;
-  color: #e6ff4b;
+  color: #f7931a;
   margin: 0.5rem 0 1rem;
 }
 
+/* ---------- MEETUP ---------- */
+.meetup {
+  background: linear-gradient(135deg, rgba(247, 147, 26, 0.06), rgba(9, 11, 16, 0.95) 70%);
+}
+
+.meetup-cards .card-bitcoin h3 {
+  color: #f7931a;
+}
+
+/* ---------- MEDIA ---------- */
 .media {
   background: linear-gradient(120deg, rgba(10, 12, 18, 0.95), rgba(18, 20, 30, 0.95));
 }
@@ -365,6 +508,11 @@ ul {
   padding: 1.5rem;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
 }
 
 .video-thumb {
@@ -385,7 +533,7 @@ ul {
 }
 
 .video-thumb.alt-2 {
-  background: linear-gradient(135deg, rgba(230, 255, 75, 0.2), rgba(12, 14, 20, 0.9));
+  background: linear-gradient(135deg, rgba(247, 147, 26, 0.25), rgba(12, 14, 20, 0.9));
 }
 
 .photo-gallery {
@@ -402,6 +550,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
+/* ---------- LIBRARY ---------- */
 .library-controls {
   display: flex;
   flex-wrap: wrap;
@@ -417,6 +566,13 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(16, 20, 30, 0.8);
   color: #f5f6f8;
+  font-size: 0.95rem;
+}
+
+.library-controls input:focus {
+  outline: none;
+  border-color: #f7931a;
+  box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.15);
 }
 
 .filter-buttons {
@@ -432,11 +588,18 @@ ul {
   background: transparent;
   color: #f5f6f8;
   cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter:hover {
+  border-color: #f7931a;
 }
 
 .filter.active {
-  background: #e6ff4b;
+  background: #f7931a;
   color: #0b0d12;
+  border-color: #f7931a;
 }
 
 .library-grid {
@@ -448,6 +611,12 @@ ul {
   padding: 1.5rem;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.library-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(123, 92, 255, 0.3);
 }
 
 .library-card .pill {
@@ -464,6 +633,7 @@ ul {
   display: none;
 }
 
+/* ---------- CALENDAR ---------- */
 .calendar-card {
   background: rgba(16, 20, 30, 0.8);
   padding: 2rem;
@@ -507,9 +677,11 @@ ul {
   content: "+";
   position: absolute;
   left: 0;
-  color: #e6ff4b;
+  color: #f7931a;
+  font-weight: 700;
 }
 
+/* ---------- LOCATION ---------- */
 .location-card {
   background: rgba(16, 20, 30, 0.8);
   padding: 1.5rem;
@@ -526,6 +698,7 @@ ul {
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.35);
 }
 
+/* ---------- CONTACT ---------- */
 .contact-grid {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
@@ -544,6 +717,14 @@ ul {
   gap: 0.4rem;
 }
 
+.field label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04rem;
+  opacity: 0.8;
+}
+
 .field input,
 .field select,
 .field textarea {
@@ -552,6 +733,16 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(14, 18, 26, 0.9);
   color: #f5f6f8;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #f7931a;
+  box-shadow: 0 0 0 3px rgba(247, 147, 26, 0.15);
 }
 
 .contact-card {
@@ -567,6 +758,21 @@ ul {
   margin: 1.5rem 0;
 }
 
+.credentials {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.credentials h4 {
+  margin: 0 0 0.5rem;
+  color: #f7931a;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  font-size: 0.85rem;
+}
+
+/* ---------- FOOTER ---------- */
 .site-footer {
   padding: 3rem 0 2rem;
   background: #080a10;
@@ -579,8 +785,31 @@ ul {
   gap: 2rem;
 }
 
-.footer-content img {
+.footer-brand img {
   width: 44px;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-tagline {
+  color: #f7931a;
+  font-weight: 600;
+  font-size: 0.85rem !important;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  margin-top: 0.8rem !important;
+}
+
+.site-footer h4 {
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  font-size: 0.85rem;
+  color: #f7931a;
+  margin-bottom: 1rem;
 }
 
 .site-footer ul {
@@ -591,7 +820,16 @@ ul {
 
 .site-footer li {
   margin-bottom: 0.6rem;
+}
+
+.site-footer li a {
   opacity: 0.8;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.site-footer li a:hover {
+  opacity: 1;
+  color: #f7931a;
 }
 
 .legal {
@@ -601,6 +839,35 @@ ul {
   opacity: 0.6;
 }
 
+/* ---------- ACTIVE NAV LINK ---------- */
+.nav-links a.active-link {
+  opacity: 1;
+  color: #f7931a;
+}
+
+/* ---------- HEADER SCROLL STATE ---------- */
+.site-header.scrolled {
+  background: rgba(9, 11, 16, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.site-header.scrolled .header-content {
+  padding: 0.6rem 0;
+}
+
+/* ---------- SCROLL REVEAL ANIMATIONS ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 960px) {
   .header-content {
     flex-wrap: wrap;
@@ -615,12 +882,13 @@ ul {
     position: absolute;
     top: 70px;
     right: 5vw;
-    background: rgba(9, 11, 16, 0.95);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(9, 11, 16, 0.97);
+    border: 1px solid rgba(247, 147, 26, 0.2);
     padding: 1.2rem;
     flex-direction: column;
     gap: 1rem;
     border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   }
 
   body.nav-open .nav-links {
@@ -630,6 +898,14 @@ ul {
   .hero-grid,
   .split {
     grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .stat-row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -646,4 +922,40 @@ ul {
   .btn {
     width: 100%;
   }
+
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 3.5rem 0;
+  }
+
+  .bitcoin-quote {
+    font-size: 1.3rem;
+  }
+}
+
+/* ---------- SELECTION ---------- */
+::selection {
+  background: rgba(247, 147, 26, 0.3);
+  color: #f5f6f8;
+}
+
+/* ---------- SCROLLBAR ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0d12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(247, 147, 26, 0.4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(247, 147, 26, 0.6);
 }
