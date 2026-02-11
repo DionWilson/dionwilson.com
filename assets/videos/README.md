@@ -1,4 +1,5 @@
-Place compressed videos here (MP4 or WebM).
+# Videos
 
-Large files should be tracked with Git LFS. Update index.html to embed or link
-to each video.
+Training clips, event highlights, and demo content.
+
+**Note:** Large video files are tracked with Git LFS. If a file exceeds 100 MB, ensure Git LFS is installed before pushing.

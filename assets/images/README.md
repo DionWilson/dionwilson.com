@@ -1,3 +1,7 @@
-Drop image files here (JPG, PNG, SVG).
+# Images
 
-Naming tip: use lowercase-with-hyphens for easy linking.
+Training photos, headshots, branding assets, and exercise library visuals.
+
+**Naming convention:** Use lowercase with hyphens (e.g., `dion-bench.jpeg`, `dbody-logo.png`).
+
+**Supported formats:** JPG, JPEG, PNG, SVG, WebP.
