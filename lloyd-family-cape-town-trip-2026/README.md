@@ -78,8 +78,25 @@
 
 ---
 
+## Restaurant shortlist (Eat Out 2026)
+
+Book the starred tables now. Split the family for tasting menus, and keep one or two nights for everyone.
+
+| Priority | Restaurant | Area | Use it for |
+|----------|------------|------|------------|
+| Book now | Salsify at the Roundhouse ★★★ | Above Camps Bay | Adult lunch, Atlantic houses |
+| Book now | La Colombe ★★★ | Constantia Nek | Adult dinner, Constantia houses |
+| Book now | FYN ★★★ | City Bowl | Restaurant of the Year, one special night |
+| Book now | Pier ★★★ | V&A Waterfront | Seafood, smaller party |
+| Whole family | COY ★★ | V&A Waterfront | Up to ~45–50 seated |
+| Whole family | Marble or Noah | CBD | 15–39 at one table |
+| With kids | Blockhouse Kitchen | Constantia Uitsig | Playground next to the tables |
+| With kids | Moyo | Kirstenbosch | Kids' menu; garden entry required |
+| Wine day | La Petite Colombe ★★★ | Franschhoek | Lunch on the wine-country day |
+
 ## Version History
 
+- **v1.1** (Oct 7, 2026) - Added 2026 Eat Out restaurant shortlist and a dinner plan
 - **v1.0** (Oct 2026) - Initial preliminary itinerary
 
 *This is a preliminary planning document. Updates will be made as bookings are confirmed.*
